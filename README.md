@@ -1,6 +1,8 @@
 # MG5
 ## Devlog
-Put your Devlog here.
+
+1. I think it's more advantageous to use a NavMesh when you have a defined path you want the player to walk on, where movement is determined by clicking at a certain point on screen. Basically, like a point-and-click game. In general, I think if your game relies on movement input from a mouse, then a NavMesh is ideal. Otherwise, if you want your player to move from keyboard/button inputs like WASD or a controller, then making scripted phsyics would be better, like for a platformer where the traversal movement is more complex than simply moving from point A to point B.
+2. In each iteration of the for loop, the local variable of bird gets assigned the value of the current index for the _birds array, and since the loop is on Update, then each index gets assigned to the variable before the loop repeats each frame. That bird within the array then gets used in the if statement since it was assigned to the bird variable, which is then used as an argument in Vector3.Distance to calculate the distance between the player and that bird's index within the _birds array. The if-statement then checks to see if that calculated distance is less than or equal to the distance defined in the Inspector for how close the player can get to the birds before they start to run away, in which case it will call the RunAway method on that specific bird within the array. 
 
 ## Open-Source Assets
 - [Quirky animal 3D models](https://assetstore.unity.com/packages/3d/characters/animals/quirky-series-free-animals-pack-178235)
